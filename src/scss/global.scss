@@ -601,6 +601,14 @@ b {
     }
   }
 
+  .source {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 10px 0 0 0;
+
+    pointer-events: auto;
+  }
+
   .glyphicon-arrow-right {
     display: block;
     float: left;

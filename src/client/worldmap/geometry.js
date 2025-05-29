@@ -103,6 +103,7 @@ export function createCountriesGeometry(worldMap) {
               )
             ) {
               // log('Loading visa requirements for: ' + country.name);
+              country.id = requirementsCountry.id;
               country.destinations = requirementsCountry.destinations;
               numVisaRequirementsFound++;
             }

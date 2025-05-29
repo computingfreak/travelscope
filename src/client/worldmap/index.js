@@ -1034,7 +1034,10 @@ WorldMap.prototype = {
                   ".<br/>" +
                   '<div class="notes">' +
                   this.selectedDestinationCountry.notes +
-                  "</div>"
+                  "</div>" +
+                  '<div class="source"><a href="https://en.wikipedia.org/?curid=' +
+                  this.selectedCountry.id +
+                  '" target="_new">Source</a></div>'
               );
 
               break;
@@ -1071,7 +1074,10 @@ WorldMap.prototype = {
                 sovereigntyDestination +
                 '.<br/><div class="notes">' +
                 this.selectedDestinationCountry.notes +
-                "</div>"
+                "</div>" +
+                '<div class="source"><a href="https://en.wikipedia.org/?curid=' +
+                this.selectedCountry.id +
+                '" target="_new">Source</a></div>'
             );
           }
         } else {
@@ -1244,7 +1250,10 @@ WorldMap.prototype = {
                   sovereigntyDestination +
                   '.<br/><div class="notes">' +
                   this.selectedDestinationCountry.notes +
-                  "</div>"
+                  "</div>" +
+                  '<div class="source"><a href="https://en.wikipedia.org/?curid=' +
+                  this.selectedCountry.id +
+                  '" target="_new">Source</a></div>'
               );
 
               break;
@@ -1279,7 +1288,10 @@ WorldMap.prototype = {
                 sovereigntyDestination +
                 '.<br/><div class="notes">' +
                 this.selectedDestinationCountry.notes +
-                "</div>"
+                "</div>" +
+                '<div class="source"><a href="https://en.wikipedia.org/?curid=' +
+                this.selectedCountry.id +
+                '" target="_new">Source</a></div>'
             );
           }
         } else {

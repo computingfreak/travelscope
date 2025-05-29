@@ -2,6 +2,8 @@
 $pages = $parser->doc->getElementsByTagName('page');
 $count = 0;
 foreach ($pages as $page) {
+    $idNode = $parser->getNodeByName($page, "id");
+
     $titleNode = $parser->getNodeByName($page, "title");
     if ($titleNode) {
         $title = $titleNode->nodeValue;
@@ -18,7 +20,7 @@ foreach ($pages as $page) {
                 $country = getCountryByTitle($countries, $title);
 
                 if ($country[0] != "COUNTRY_NAME") {
-                    // if($country[0] == "Bangladesh") {
+                    // if ($country[0] == "China") {
                     // echo "Country:" . $country[0] . "\n<br>";
 
                     $destinations = parseWikiText($text, $debug, $country[0]);
@@ -26,7 +28,11 @@ foreach ($pages as $page) {
                     if ($destinations) {
                         // echo $text;
 
-                        $string = "\t{ \"name\": \"" . $country[0] . "\", \"code\": \"" . $country[1] . "\", \"destinations\": [";
+                        $string = "\t{ \"name\": \"" . $country[0] . "\", \"code\": \"" . $country[1] . "\"";
+                        if ($idNode) {
+                            $string .= ", \"id\": \"" . $idNode->nodeValue . "\"";
+                        }
+                        $string .= ", \"destinations\": [";
 
                         foreach ($destinations as $key => $destination) {
                             $d = "\t{ \"d_name\": " . json_encode($destination['d_name']) . ",
